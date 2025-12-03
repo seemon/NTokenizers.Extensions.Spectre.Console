@@ -43,10 +43,30 @@ nav ul {
     padding: 12px;
 }
 
-blockquote.warning {
-    border-left: 4px solid #ffc107;
+blockquote {
+    border-left: 4px solid #ccc;
     padding: 1rem;
     margin: 1rem 0;
-    background-color: #fff3cd;
-    border-color: #ffeaa7;
+    background-color: #f8f9fa;
+}
+
+    blockquote.warning {
+        border-left: 4px solid #ffc107;
+        padding: 1rem;
+        margin: 1rem 0;
+        background-color: #fff3cd;
+        border-color: #ffeaa7;
+    }
+
+table {
+    border-collapse: collapse; /* makes borders look clean */
+}
+
+td, th {
+    padding: 8px 12px;
+    border: 1px solid purple;
+}
+
+img {
+    border: solid 2px #666;
 }

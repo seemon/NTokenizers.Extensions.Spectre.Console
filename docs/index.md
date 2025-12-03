@@ -32,3 +32,11 @@ Link: [Youtube](https://www.youtube.com/watch?v=o4LR8MxP3rg)
 <iframe width="1112" height="590" src="https://www.youtube.com/embed/NleKdlooc_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Link: [Youtube](https://youtu.be/NleKdlooc_0)
+
+## String output
+
+```csharp
+var result = await AnsiConsole.Console.WriteMarkupTextAsync(stream);
+```
+
+In addition to writing to the console, the original input is returned for convenience.

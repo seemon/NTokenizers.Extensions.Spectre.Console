@@ -25,6 +25,10 @@ await AnsiConsole.Console.WriteMarkupTextAsync(stream);
 
 <iframe width="1112" height="590" src="https://www.youtube.com/embed/o4LR8MxP3rg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+Link: [Youtube](https://www.youtube.com/embed/o4LR8MxP3rg)
+
 ## Ai demo
 
 <iframe width="1112" height="590" src="https://youtu.be/NleKdlooc_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Link: [Youtube](https://youtu.be/NleKdlooc_0)

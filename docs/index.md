@@ -20,6 +20,8 @@ await AnsiConsole.Console.WriteMarkupTextAsync(stream);
 ```
 
 > **Especially suitable for parsing AI chat streams**, NTokenizers excels at processing real-time tokenized data from AI models, enabling efficient handling of streaming responses and chat conversations without buffering entire responses.
+>
+> Check out [AI Example](ai) for an HowTo.
 
 ## Token visualization demo
 

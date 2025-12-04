@@ -5,7 +5,7 @@ title: "AI Example"
 
 # AI Chat Stream Example
 
-This page demonstrates how to use NTokenizers.Extensions.Spectre.Console with AI chat clients, particularly for handling streaming responses from language models. This is especially useful when working with AI frameworks like Microsoft.Extensions.AI.
+This page demonstrates how to use NTokenizers.Extensions.Spectre.Console with AI chat clients, particularly for handling streaming responses from language models. This is especially useful when working with AI frameworks like **Microsoft.Extensions.AI**.
 
 ## Overview
 
@@ -60,6 +60,14 @@ public static Stream GetChatResponseStream(
 ## Complete Chat Service Example
 
 Here's a complete example of a chat service that renders AI responses with syntax highlighting:
+
+### Install nuget package
+
+```bash
+dotnet add package Microsoft.Extensions.AI --version 9.10.2
+```
+
+### Example
 
 ```csharp
 using Microsoft.Extensions.AI;
@@ -138,6 +146,18 @@ public class ChatService
 ## Setting Up with Dependency Injection
 
 Here's how to set up the chat service with dependency injection using Microsoft.Extensions.Hosting:
+
+### Install nuget package
+
+```bash
+# For Ollama integration
+dotnet add package OllamaSharp --version 5.4.11
+
+# For dependency injection support
+dotnet add package Microsoft.Extensions.Hosting --version 9.0.11
+```
+
+### Example
 
 ```csharp
 using Microsoft.Extensions.AI;

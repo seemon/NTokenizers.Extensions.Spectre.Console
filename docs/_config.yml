@@ -7,7 +7,7 @@ markdown: kramdown
 sidebar:
   nav:
     - title: "Home"
-      url: "/ntokenizers"
+      url: "/NTokenizers.Extensions.Spectre.Console"
     - title: "C#"
       url: "csharp"
     - title: "Json"

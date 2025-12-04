@@ -103,8 +103,8 @@ using NTokenizers.Extensions.Spectre.Console;
 var csharpCode = """
     using System;
 
-    // Main method
-    public readonly record struct class Program {
+    // Main class
+    public class Program {
         public static void Main() {
             Console.WriteLine("Hello, World!");
         }

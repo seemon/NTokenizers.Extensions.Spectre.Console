@@ -56,7 +56,7 @@ public partial class ChatService
             });
 
             var stream = GetChatResponseStream(_chatClient, chatHistory, chatOptions, cts.Token);
-            var result = await AnsiConsole.Console.WriteMarkupTextAsync(stream);
+            var result = await AnsiConsole.Console.WriteMarkupTextAsync(stream, encoding: Encoding.UTF8, ct: cts.Token);
 
             Debug.WriteLine(result);
 

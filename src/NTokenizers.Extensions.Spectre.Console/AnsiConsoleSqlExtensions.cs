@@ -9,7 +9,6 @@ namespace NTokenizers.Extensions.Spectre.Console;
 /// <summary>
 /// Provides extension methods for <see cref="IAnsiConsole"/> to render SQL syntax-highlighted output.
 /// </summary>
-/// <remarks>
 public static class AnsiConsoleSqlExtensions
 {
     /// <summary>

@@ -14,8 +14,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTokenizers.Extensions.Spec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTokenizers.Extensions.Spectre.Console.ShowCase.Json", "tests\NTokenizers.Extensions.Spectre.Console.ShowCase.Json\NTokenizers.Extensions.Spectre.Console.ShowCase.Json.csproj", "{2F61640E-70CB-DEA0-C9F6-6A36B807364A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTokenizers.Extensions.Spectre.Console.ShowCase.Markup", "tests\NTokenizers.Extensions.Spectre.Console.ShowCase.Markup\NTokenizers.Extensions.Spectre.Console.ShowCase.Markup.csproj", "{2C62DD7A-4B6D-F1C4-B267-165257BF90EA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTokenizers.Extensions.Spectre.Console.ShowCase.Sql", "tests\NTokenizers.Extensions.Spectre.Console.ShowCase.Sql\NTokenizers.Extensions.Spectre.Console.ShowCase.Sql.csproj", "{2759C9A3-A558-F61F-BB67-704CFD1BAF34}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTokenizers.Extensions.Spectre.Console.ShowCase.Typescript", "tests\NTokenizers.Extensions.Spectre.Console.ShowCase.Typescript\NTokenizers.Extensions.Spectre.Console.ShowCase.Typescript.csproj", "{AADD2817-ED83-1061-C352-FF1A00B1757C}"
@@ -23,6 +21,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTokenizers.Extensions.Spectre.Console.ShowCase.Xml", "tests\NTokenizers.Extensions.Spectre.Console.ShowCase.Xml\NTokenizers.Extensions.Spectre.Console.ShowCase.Xml.csproj", "{FA8A4B13-816D-D303-ACA3-53924F1597D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTokenizers.Extensions.Spectre.Console.ShowCase.Ai", "tests\NTokenizers.Extensions.Spectre.Console.ShowCase.Ai\NTokenizers.Extensions.Spectre.Console.ShowCase.Ai.csproj", "{B703F9C7-F889-49D6-AB1F-1B56100D8886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTokenizers.Extensions.Spectre.Console.ShowCase.Markdown", "tests\NTokenizers.Extensions.Spectre.Console.ShowCase.Markdown\NTokenizers.Extensions.Spectre.Console.ShowCase.Markdown.csproj", "{79DA44F9-C483-9A40-999C-FFEC40266BEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +42,6 @@ Global
 		{2F61640E-70CB-DEA0-C9F6-6A36B807364A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F61640E-70CB-DEA0-C9F6-6A36B807364A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F61640E-70CB-DEA0-C9F6-6A36B807364A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C62DD7A-4B6D-F1C4-B267-165257BF90EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C62DD7A-4B6D-F1C4-B267-165257BF90EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C62DD7A-4B6D-F1C4-B267-165257BF90EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C62DD7A-4B6D-F1C4-B267-165257BF90EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2759C9A3-A558-F61F-BB67-704CFD1BAF34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2759C9A3-A558-F61F-BB67-704CFD1BAF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2759C9A3-A558-F61F-BB67-704CFD1BAF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,6 +58,10 @@ Global
 		{B703F9C7-F889-49D6-AB1F-1B56100D8886}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B703F9C7-F889-49D6-AB1F-1B56100D8886}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B703F9C7-F889-49D6-AB1F-1B56100D8886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79DA44F9-C483-9A40-999C-FFEC40266BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79DA44F9-C483-9A40-999C-FFEC40266BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79DA44F9-C483-9A40-999C-FFEC40266BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79DA44F9-C483-9A40-999C-FFEC40266BEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

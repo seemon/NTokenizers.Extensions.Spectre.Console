@@ -4,27 +4,27 @@ using System.ComponentModel;
 namespace NTokenizers.Extensions.Spectre.Console.Styles;
 
 /// <summary>
-/// Represents the styling options for ordered list items in markup rendering.
+/// Represents the styling options for ordered list items in markdown rendering.
 /// This class defines the visual appearance of numbered list items when rendering
-/// markup content with Spectre.Console extensions for NTokenizers.
+/// markdown content with Spectre.Console extensions for NTokenizers.
 /// </summary>
 /// <remarks>
-/// The <see cref="MarkupOrderedListItemStyles"/> class provides styling capabilities
+/// The <see cref="MarkdownOrderedListItemStyles"/> class provides styling capabilities
 /// for ordered list items, allowing customization of the appearance of numbers
-/// in markup lists. This is particularly useful when rendering structured
-/// markup content such as documentation or formatted text with numbered lists.
+/// in markdown lists. This is particularly useful when rendering structured
+/// markdown content such as documentation or formatted text with numbered lists.
 /// </remarks>
 [EditorBrowsable(EditorBrowsableState.Never)]
-public class MarkupOrderedListItemStyles
+public class MarkdownOrderedListItemStyles
 {
     /// <summary>
     /// Gets the default styling options for ordered list items.
     /// </summary>
     /// <value>
-    /// A <see cref="MarkupOrderedListItemStyles"/> instance with default settings,
+    /// A <see cref="MarkdownOrderedListItemStyles"/> instance with default settings,
     /// currently configured with an Aqua color for the number styling.
     /// </value>
-    public static MarkupOrderedListItemStyles Default => new();
+    public static MarkdownOrderedListItemStyles Default => new();
 
     /// <summary>
     /// Gets or sets the style applied to the number portion of ordered list items.

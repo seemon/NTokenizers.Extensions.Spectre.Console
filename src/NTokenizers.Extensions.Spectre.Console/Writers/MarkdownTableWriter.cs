@@ -1,5 +1,5 @@
-﻿using NTokenizers.Markup;
-using NTokenizers.Markup.Metadata;
+﻿using NTokenizers.Markdown;
+using NTokenizers.Markdown.Metadata;
 using NTokenizers.Extensions.Spectre.Console.Extensions;
 using NTokenizers.Extensions.Spectre.Console.Styles;
 using System.Diagnostics;
@@ -7,7 +7,7 @@ using Spectre.Console;
 
 namespace NTokenizers.Extensions.Spectre.Console.Writers;
 
-internal class MarkupTableWriter(IAnsiConsole ansiConsole, MarkupStyles markupStyles)
+internal class MarkdownTableWriter(IAnsiConsole ansiConsole, MarkdownStyles markdownStyles)
 {
     internal async Task WriteAsync(TableMetadata metadata)
     {
@@ -22,11 +22,11 @@ internal class MarkupTableWriter(IAnsiConsole ansiConsole, MarkupStyles markupSt
         {
             await metadata.RegisterInlineTokenHandler(async inlineToken =>
             {
-                if (inlineToken.TokenType == MarkupTokenType.TableAlignments)
+                if (inlineToken.TokenType == MarkdownTokenType.TableAlignments)
                 {
                     HandleAlignments(spectreTable, metadata);
                 }
-                else if (inlineToken.TokenType == MarkupTokenType.TableRow)
+                else if (inlineToken.TokenType == MarkdownTokenType.TableRow)
                 {
                     //Handle new row
                     column = -1;
@@ -38,7 +38,7 @@ internal class MarkupTableWriter(IAnsiConsole ansiConsole, MarkupStyles markupSt
                         spectreTable.AddRow(currentRow);
                     }
                 }
-                else if (inlineToken.TokenType == MarkupTokenType.TableCell)
+                else if (inlineToken.TokenType == MarkdownTokenType.TableCell)
                 {
                     column++;
                     if (spectreTable.Rows.Count == 0)
@@ -110,13 +110,13 @@ internal class MarkupTableWriter(IAnsiConsole ansiConsole, MarkupStyles markupSt
         }
     }
 
-    private async Task WriteTokenAsync(Paragraph liveParagraph, MarkupToken token)
+    private async Task WriteTokenAsync(Paragraph liveParagraph, MarkdownToken token)
     {
         if (string.IsNullOrEmpty(token.Value))
         {
             return;
         }
         Debug.WriteLine($"Writing token: `{token.Value}` of type `{token.TokenType}`");
-        await MarkupWriter.Create(ansiConsole).WriteAsync(liveParagraph, token, markupStyles.TableCell);
+        await MarkdownWriter.Create(ansiConsole).WriteAsync(liveParagraph, token, markdownStyles.TableCell);
     }
 }

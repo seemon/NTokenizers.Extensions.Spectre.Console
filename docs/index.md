@@ -5,7 +5,7 @@ title: "Home"
 
 # NTokenizers.Extensions.Spectre.Console
 
-The **NTokenizers.Extensions.Spectre.Console** library provides advanced syntax highlighting using Spectre.Console for XML, JSON, Markup, TypeScript, JavaScript, C#, and SQL.
+The **NTokenizers.Extensions.Spectre.Console** library provides advanced syntax highlighting using Spectre.Console for XML, JSON, Markdown, TypeScript, JavaScript, C#, and SQL.
 
 ![Example](assets/example.png)
 
@@ -18,7 +18,7 @@ Together, they enable expressive syntax highlighting directly in the console.
 ## Example Usage
 
 ```csharp
-await AnsiConsole.Console.WriteMarkupTextAsync(stream);
+await AnsiConsole.Console.WriteMarkdownAsync(stream);
 ```
 
 > **Especially suitable for parsing AI chat streams**, NTokenizers excels at processing real-time tokenized data from AI models, enabling efficient handling of streaming responses and chat conversations without buffering entire responses.
@@ -40,7 +40,7 @@ Link: [Youtube](https://youtu.be/NleKdlooc_0)
 ## String output
 
 ```csharp
-var result = await AnsiConsole.Console.WriteMarkupTextAsync(stream);
+var result = await AnsiConsole.Console.WriteMarkdownAsync(stream);
 ```
 
 In addition to writing to the console, the original input is returned for convenience.

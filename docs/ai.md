@@ -107,7 +107,7 @@ public class ChatService
             var stream = GetChatResponseStream(_chatClient, chatHistory, chatOptions);
             
             // Render with markup/markdown syntax highlighting
-            var result = await AnsiConsole.Console.WriteMarkupTextAsync(stream);
+            var result = await AnsiConsole.Console.WriteMarkdownAsync(stream);
 
             // Add assistant response to history for context
             chatHistory.Add(new ChatMessage(ChatRole.Assistant, result));

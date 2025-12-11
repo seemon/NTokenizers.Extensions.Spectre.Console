@@ -1,9 +1,9 @@
-﻿using NTokenizers.Markup.Metadata;
+﻿using NTokenizers.Markdown.Metadata;
 using Spectre.Console;
 
 namespace NTokenizers.Extensions.Spectre.Console.Writers;
 
-internal class MarkupLinkWriter(IAnsiConsole ansiConsole)
+internal class MarkdownLinkWriter(IAnsiConsole ansiConsole)
 {
     internal void Write(LinkMetadata linkMeta)
     {

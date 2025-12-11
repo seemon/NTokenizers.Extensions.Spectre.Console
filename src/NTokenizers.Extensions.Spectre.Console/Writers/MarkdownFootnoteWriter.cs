@@ -1,9 +1,9 @@
-﻿using NTokenizers.Markup.Metadata;
+﻿using NTokenizers.Markdown.Metadata;
 using Spectre.Console;
 
 namespace NTokenizers.Extensions.Spectre.Console.Writers;
 
-internal class MarkupFootnoteWriter(IAnsiConsole ansiConsole)
+internal class MarkdownFootnoteWriter(IAnsiConsole ansiConsole)
 {
     internal void Write(FootnoteMetadata footnoteMeta)
     {

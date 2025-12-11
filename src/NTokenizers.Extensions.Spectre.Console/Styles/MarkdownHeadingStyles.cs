@@ -1,23 +1,18 @@
 ﻿using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NTokenizers.Extensions.Spectre.Console.Styles;
 
 /// <summary>
-/// Represents the style configuration for markup headings in the Spectre.Console rendering extensions for NTokenizers.
-/// This class defines the visual styling for different heading levels (H1-H6) when rendering markup content
+/// Represents the style configuration for markdown headings in the Spectre.Console rendering extensions for NTokenizers.
+/// This class defines the visual styling for different heading levels (H1-H6) when rendering markdown content
 /// with syntax highlighting in the console.
 /// </summary>
-public class MarkupHeadingStyles
+public class MarkdownHeadingStyles
 {
     /// <summary>
-    /// Gets the default markup heading styles.
+    /// Gets the default markdown heading styles.
     /// </summary>
-    public static MarkupHeadingStyles Default => new();
+    public static MarkdownHeadingStyles Default => new();
 
     /// <summary>
     /// Gets or sets the style for level 1 headings (H1).

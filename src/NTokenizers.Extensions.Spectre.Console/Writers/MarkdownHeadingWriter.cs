@@ -1,19 +1,19 @@
-﻿using NTokenizers.Markup;
-using NTokenizers.Markup.Metadata;
+﻿using NTokenizers.Markdown;
+using NTokenizers.Markdown.Metadata;
 using NTokenizers.Extensions.Spectre.Console.Styles;
 using Spectre.Console.Rendering;
 using Spectre.Console;
 
 namespace NTokenizers.Extensions.Spectre.Console.Writers;
 
-internal sealed class MarkupHeadingWriter(IAnsiConsole ansiConsole, MarkupHeadingStyles styles) : BaseInlineWriter<MarkupToken, MarkupTokenType>(ansiConsole)
+internal sealed class MarkdownHeadingWriter(IAnsiConsole ansiConsole, MarkdownHeadingStyles styles) : BaseInlineWriter<MarkdownToken, MarkdownTokenType>(ansiConsole)
 {
     private Style _style = default!;
     private int _lenght = 0;
 
-    protected override Style GetStyle(MarkupTokenType token) => _style;
+    protected override Style GetStyle(MarkdownTokenType token) => _style;
 
-    protected override async Task StartedAsync(InlineMarkupMetadata<MarkupToken> metadata)
+    protected override async Task StartedAsync(InlineMarkdownMetadata<MarkdownToken> metadata)
     {
         _liveParagraph.Append("\n");
         if (metadata is HeadingMetadata meta)
@@ -31,7 +31,7 @@ internal sealed class MarkupHeadingWriter(IAnsiConsole ansiConsole, MarkupHeadin
         }
     }
 
-    protected override async Task FinalizeAsync(InlineMarkupMetadata<MarkupToken> metadata)
+    protected override async Task FinalizeAsync(InlineMarkdownMetadata<MarkdownToken> metadata)
     {
         if (metadata is HeadingMetadata meta)
         {
@@ -54,13 +54,13 @@ internal sealed class MarkupHeadingWriter(IAnsiConsole ansiConsole, MarkupHeadin
 
     private async Task WriteToken(string text)
     {
-        await WriteTokenAsync(_liveParagraph, new MarkupToken(MarkupTokenType.Text, text));
+        await WriteTokenAsync(_liveParagraph, new MarkdownToken(MarkdownTokenType.Text, text));
     }
 
-    protected override async Task WriteTokenAsync(Paragraph liveParagraph, MarkupToken token)
+    protected override async Task WriteTokenAsync(Paragraph liveParagraph, MarkdownToken token)
     {
         _lenght += token.Value.Length;
-        await MarkupWriter.Create(ansiConsole).WriteAsync(liveParagraph, token, _style);
+        await MarkdownWriter.Create(ansiConsole).WriteAsync(liveParagraph, token, _style);
     }
 
     protected override IRenderable GetIRendable() => _liveParagraph;

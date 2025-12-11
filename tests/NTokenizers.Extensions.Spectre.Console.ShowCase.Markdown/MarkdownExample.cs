@@ -1,6 +1,6 @@
-namespace NTokenizers.Extensions.Spectre.Console.ShowCase.Markup;
+namespace NTokenizers.Extensions.Spectre.Console.ShowCase.Markdown;
 
-internal static class MarkupExample
+internal static class MarkdownExample
 {
     internal static string GetSampleText() =>
         """

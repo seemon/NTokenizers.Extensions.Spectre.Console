@@ -1,9 +1,9 @@
-﻿using NTokenizers.Markup.Metadata;
+﻿using NTokenizers.Markdown.Metadata;
 using Spectre.Console;
 
 namespace NTokenizers.Extensions.Spectre.Console.Writers;
 
-internal class MarkupEmojiWriter(IAnsiConsole ansiConsole)
+internal class MarkdownEmojiWriter(IAnsiConsole ansiConsole)
 {
     internal void Write(EmojiMetadata emojiMeta)
     {

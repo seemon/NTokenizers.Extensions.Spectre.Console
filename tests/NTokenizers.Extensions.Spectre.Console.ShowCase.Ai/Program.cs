@@ -20,6 +20,8 @@ builder.Services.AddSingleton<ChatService>();
 
 var endpoint = "http://localhost:11434/";
 var modelId = "hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q5_K_XL";
+//var modelId = "ministral-3:14b";
+//var modelId = "qwen3-next";
 
 builder.Services.AddChatClient(ChatClientBuilderChatClientExtensions.AsBuilder(new OllamaApiClient(endpoint, modelId))
     .UseFunctionInvocation()
@@ -42,7 +44,6 @@ await AnsiConsole
 
 Console.WriteLine();
 AnsiConsole.MarkupLine($"Status: Ollama: {(status.IsUp ? "[green]✅[/]" : "[red]❌[/]")} Model: {(status.IsAvailable ? "[green]✅[/]" : "[red]❌[/]")} Running: {(status.IsRunning ? "[green]✅[/]" : "[red]❌[/]")}");
-Console.WriteLine();
 
 var chatService = app.Services.GetRequiredService<ChatService>();
 await chatService.StartAsync();

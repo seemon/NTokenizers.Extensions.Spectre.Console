@@ -13,15 +13,26 @@ public partial class ChatService
 
     public async Task StartAsync()
     {
-        System.Console.WriteLine();
+        var help = """"
+                   #### Some extra instructions to accomodate multiline input:
+                   |Command|Description|
+                   |**Shift-Enter**|to place a soft new line|
+                   |**Ctrl-B**|to paste multiline, do not use **Ctrl-V**, because that will input a _<Enter>_'s|
+                   |**bye**|type bye to end the chat session|
+                   |**clear**|type clear to clear the chat history|
+                   """";
+
+        AnsiConsole.Console.WriteMarkdown(help);
 
         var chatOptions = new ChatOptions { };
         List<ChatMessage> chatHistory = [];
         while (true)
         {
+            System.Console.WriteLine();
+
             // Get user prompt and add to chat history
-            AnsiConsole.Markup("[green]Your prompt: [/]");
-            var userPrompt = System.Console.ReadLine();
+            AnsiConsole.MarkupLine("[green]Your prompt: [/]");
+            var userPrompt = AnsiConsole.Prompt(new MultilinePrompt());
 
             if (string.Equals(userPrompt, "bye", StringComparison.OrdinalIgnoreCase))
             {
@@ -55,7 +66,18 @@ public partial class ChatService
                 }
             });
 
-            var stream = GetChatResponseStream(_chatClient, chatHistory, chatOptions, cts.Token);
+            var stream = GetChatResponseStream(_chatClient, chatHistory, chatOptions, cts.Token, out var firstChunkTask);
+
+            await AnsiConsole.Status()
+                .Spinner(Spinner.Known.Dots)
+                .SpinnerStyle(new Style(foreground: Color.Green))
+                .StartAsync("Processing...", async ctx =>
+                {
+                    await firstChunkTask;
+                });
+
+            AnsiConsole.Console.WriteLine();
+
             var result = await AnsiConsole.Console.WriteMarkdownAsync(stream, encoding: Encoding.UTF8, ct: cts.Token);
 
             Debug.WriteLine(result);
@@ -78,9 +100,11 @@ public partial class ChatService
         AnsiConsole.MarkupLine("[red]Bye, Bye! 💖[/]");
     }
 
-    public static Stream GetChatResponseStream(IChatClient chatClient, IList<ChatMessage> history, ChatOptions options, CancellationToken ct)
+    public static Stream GetChatResponseStream(IChatClient chatClient, IList<ChatMessage> history, ChatOptions options, CancellationToken ct, out Task firstChunkTask)
     {
         var pipe = new Pipe();
+        var tcs = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        firstChunkTask = tcs.Task; // expose this to await in spinner
 
         _ = Task.Run(async () =>
         {
@@ -88,8 +112,11 @@ public partial class ChatService
             {
                 if (!string.IsNullOrEmpty(chunk.Text))
                 {
+                    // Signal that first chunk arrived
+                    tcs.TrySetResult();
+
                     var bytes = Encoding.UTF8.GetBytes(chunk.Text);
-                    await pipe.Writer.WriteAsync(bytes);
+                    await pipe.Writer.WriteAsync(bytes, ct);
                 }
             }
 
